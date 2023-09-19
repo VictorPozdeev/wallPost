@@ -11,7 +11,8 @@ fun main() {
             canDelete = false,
             canEdit = false,
             isPinned = true,
-            markedAsAds = true
+            markedAsAds = true,
+            comments = null
         )
     )
 
@@ -25,7 +26,8 @@ fun main() {
             canDelete = false,
             canEdit = false,
             isPinned = true,
-            markedAsAds = true
+            markedAsAds = true,
+            comments = Comments()
         )
     )
 
