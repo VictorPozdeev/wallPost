@@ -27,7 +27,8 @@ object WallService {
                     canDelete = updatedPost.canDelete,
                     canEdit = updatedPost.canEdit,
                     isPinned = updatedPost.isPinned,
-                    markedAsAds = updatedPost.markedAsAds
+                    markedAsAds = updatedPost.markedAsAds,
+                    attachment = updatedPost.attachment
                 )
                 return true
             }
