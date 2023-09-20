@@ -4,11 +4,63 @@ import org.junit.Assert.*
 import org.junit.Before
 
 class WallServiceTest {
-    private val newPost1 = Post(id = 1, text = "The very first post", friendsOnly = null, comments = null, markedAsAds = null)
-    private val newPost2 = Post(id = 2, text = "Second post", friendsOnly = false, comments = Comments(), markedAsAds = true)
-    private val newPost2Update = Post(id = 2, text = "Updated second post", friendsOnly = true, comments = Comments(), markedAsAds = false)
-    private val newPost3 = Post(id = 3, text = "Third post", friendsOnly = null, comments = null, markedAsAds = null)
-    private val newPostWrongId = Post(id = -100, text = "Wrong Id", friendsOnly = null, comments = null, markedAsAds = null)
+    private val newPost1 = Post(
+        id = 1,
+        text = "The very first post",
+        friendsOnly = null,
+        comments = null,
+        markedAsAds = null,
+        attachment = arrayOf(
+            AudioAttachment(audio = Audio()),
+            PhotoAttachment(photo = Photo()),
+            NoteAttachment(note = Note())
+        )
+    )
+    private val newPost2 =
+        Post(
+            id = 2,
+            text = "Second post",
+            friendsOnly = false,
+            comments = Comments(),
+            markedAsAds = true,
+            attachment = arrayOf(
+                DocumentAttachment(doc = Document()),
+                LinkAttachment(link = Link())
+            )
+        )
+    private val newPost2Update =
+        Post(
+            id = 2,
+            text = "Updated second post",
+            friendsOnly = true,
+            comments = Comments(),
+            markedAsAds = false,
+            attachment = arrayOf(
+                DocumentAttachment(doc = Document()),
+                LinkAttachment(link = Link()),
+                AudioAttachment(audio = Audio())
+            )
+        )
+
+    private
+    val newPost3 =
+        Post(
+            id = 3, text = "Third post", friendsOnly = null, comments = null, markedAsAds = null, attachment = arrayOf(
+                DocumentAttachment(doc = Document()),
+                LinkAttachment(link = Link())
+            )
+        )
+
+    private
+    val newPostWrongId =
+        Post(
+            id = -100,
+            text = "Wrong Id",
+            friendsOnly = null,
+            comments = null,
+            markedAsAds = null,
+            attachment = emptyArray()
+        )
 
     @Before
     fun clearBeforeTest() {

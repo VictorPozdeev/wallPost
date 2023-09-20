@@ -15,5 +15,6 @@ data class Post(
     val canDelete: Boolean = false,
     val canEdit: Boolean = false,
     val isPinned: Boolean = false,
-    val markedAsAds: Boolean?
+    val markedAsAds: Boolean?,
+    val attachment: Array<Attachment>
 )

@@ -12,7 +12,12 @@ fun main() {
             canEdit = false,
             isPinned = true,
             markedAsAds = true,
-            comments = null
+            comments = null,
+            attachment = arrayOf(
+                AudioAttachment(audio = Audio()),
+                PhotoAttachment(photo = Photo()),
+                NoteAttachment(note = Note())
+            )
         )
     )
 
@@ -27,7 +32,11 @@ fun main() {
             canEdit = false,
             isPinned = true,
             markedAsAds = true,
-            comments = Comments()
+            comments = Comments(),
+            attachment = arrayOf(
+                DocumentAttachment(doc = Document()),
+                LinkAttachment(link = Link())
+            )
         )
     )
 
