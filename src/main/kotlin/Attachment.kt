@@ -1,12 +1,6 @@
+sealed class Attachment(val type: String)
 
-interface Attachment {
-    val type: String
-}
-
-class AudioAttachment(
-    override val type: String = "audio",
-    val audio: Audio
-) : Attachment
+class AudioAttachment(val audio: Audio) : Attachment("audio")
 
 class Audio(
     var id: Int = 0,
@@ -23,10 +17,7 @@ class Audio(
     var isHq: Boolean = false
 )
 
-class DocumentAttachment(
-    override val type: String = "doc",
-    val doc : Document
-) : Attachment
+class DocumentAttachment(val doc: Document) : Attachment("doc")
 
 class Document(
     var id: Int = 0,
@@ -39,10 +30,7 @@ class Document(
     var typeDocument: Int = 8
 )
 
-class PhotoAttachment(
-    override val type: String = "photo",
-    val photo: Photo
-) : Attachment
+class PhotoAttachment(val photo: Photo) : Attachment("photo")
 
 class Photo(
     var id: Int = 0,
@@ -63,10 +51,7 @@ class PhotoSize(
     var height: Int = 0
 )
 
-class LinkAttachment(
-    override val type: String = "link",
-    val link: Link
-) : Attachment
+class LinkAttachment(val link: Link) : Attachment("link")
 
 class Link(
     var url: String = "",
@@ -78,10 +63,7 @@ class Link(
     var previewUrl: String = ""
 )
 
-class NoteAttachment(
-    override val type: String = "note",
-    val note: Note
-) : Attachment
+class NoteAttachment(val note: Note) : Attachment("note")
 
 class Note(
     var id: Int = 0,
